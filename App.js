@@ -22,7 +22,7 @@ export default function App() {
       <View style={styles.nav}>
         {/*****  nav ******/}
         <LinearGradient 
-          colors={['#daeff1', '#93c2cc']} 
+          colors={[ '#2c8759', '#003300']} 
           style={styles.navBG}>
 
           <ScrollView    
@@ -96,23 +96,27 @@ const styles = ScaledSheet.create({
   },
   
   headText:{
-    color: '#141f1f',
+    color: '#fff',
     fontWeight: 'bold',
     fontFamily: 'Georgia',
     fontSize: '40@s',
-    textShadowColor: 'rgba(240, 240, 240, 0.5)',
+    textShadowColor: 'rgba(240, 240, 240, 0.3)',
     textShadowOffset: {width: 1, height: 1},
-    textShadowRadius: 25,
+    textShadowRadius: 15,
 
     marginLeft: '25@s',
     marginTop: '15@s' 
   },
 
   subHead:{
-    color: '#daeff1',
+    color: '#00cc9c',
     fontWeight: 'bold',
     fontFamily: 'Georgia',
     fontSize: '18@s',
+
+    textShadowColor: 'rgba(0, 0, 0, 1)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 55,
     marginLeft: '30@s', 
   },
 
@@ -133,12 +137,11 @@ const styles = ScaledSheet.create({
   },
 
   navButton:{
-  
     paddingHorizontal: '10@s',
     paddingVertical: '8@mvs0.1',
     fontFamily:'Helvetica',
     fontSize: 25,
-    color: '#252F33',
+    color: '#fff',
     justifyContent: 'center',
   },
 
