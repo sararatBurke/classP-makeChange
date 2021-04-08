@@ -1,20 +1,22 @@
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 
 export default function App() {
+    const bannerBg = { uri: "https://wallpaperaccess.com/full/336165.jpg" }
 
   return (
   <View style={styles.container}>
 
       <View style={styles.header}>
+        <ImageBackground source={bannerBg} style={styles.image}>
         {/***** header *****/}
       
           <Text style={styles.headText}>A Subtle Green</Text>
           <Text style={styles.subHead}>A design by Bryant Smith</Text>
-       
+        </ImageBackground>
       </View>
 
       <View style={styles.nav}>
@@ -79,27 +81,36 @@ const styles = ScaledSheet.create({
     // justifyContent: 'center',
   },
 
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+
   header:{
     backgroundColor: '#93c2cc',
     width: '100%', 
-    padding :'10@s', 
+    height: '150@s' 
   },
   
   headText:{
-    color: '#252F33',
+    color: '#141f1f',
     fontWeight: 'bold',
     fontFamily: 'Georgia',
-    fontSize: '27@s',
+    fontSize: '40@s',
+    textShadowColor: 'rgba(240, 240, 240, 0.5)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 25,
 
-    marginLeft: '15@s',
-    marginTop: '25@s' 
+    marginLeft: '25@s',
+    marginTop: '15@s' 
   },
 
   subHead:{
     color: '#daeff1',
     fontWeight: 'bold',
     fontFamily: 'Georgia',
-    fontSize: '12@s',
+    fontSize: '18@s',
     marginLeft: '30@s', 
   },
 
