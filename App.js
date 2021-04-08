@@ -5,8 +5,8 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 
 export default function App() {
-    const bannerBg = { uri: "https://wallpaperaccess.com/full/336165.jpg" }
-
+    const bannerBg = { uri: "https://wallpaperaccess.com/full/336165.jpg" };
+    const bodyBg = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsxs7wYBQbxNozDnmmzcIlM6gsTp5ISBObeA&usqp=CAU"};
   return (
   <View style={styles.container}>
 
@@ -40,8 +40,9 @@ export default function App() {
       </View>
 
       <View style={styles.body}>
+        <ImageBackground source={bodyBg} style={styles.image}>
         {/*****  body ******/}
-        <ScrollView>
+        <ScrollView style={styles.bodySize}>
           <Text style={styles.bodyHead}>The Article Title</Text>
 
           <View style={styles.topContent}>
@@ -63,6 +64,7 @@ export default function App() {
 
             <Text style={styles.content}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>
         </ScrollView>
+        </ImageBackground>
       </View>
 
   </View>
@@ -140,11 +142,18 @@ const styles = ScaledSheet.create({
     justifyContent: 'center',
   },
 
+  bg:{
+    flex:1,
+    resizeMode: 'cover',
+    justifyContent: 'center'
+  },
+  bodySize:{
+    padding: '20@mvs'
+  },
   body: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#869c81', 
-    padding: '12@s'   
+    backgroundColor: '#869c81',   
   },
 
   bodyHead:{
