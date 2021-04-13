@@ -1,5 +1,5 @@
 import React from 'react';
-import OriginalView from './changeScreen/originalView';
+import ClassW1 from './changeScreen/classW1';
 import ClassW2 from './changeScreen/classW2';
 
 export default function App() {

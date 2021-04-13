@@ -28,8 +28,8 @@ export default function App() {
         {/* Banner image */}
         <ImageBackground source={banner}
           style={styles.bannerBg}>
-        <Text>HD Monochrome</Text>
-        <Text>An XHTML 1.0 Strict Template by Bryant Smith</Text>
+        <Text style={styles.bannerHead}>HD Monochrome</Text>
+        <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text>
         </ImageBackground>
       </View>
 
@@ -86,6 +86,15 @@ const styles = ScaledSheet.create({
     resizeMode: "stretch",
     padding: 20,
   },
+  bannerHead:{
+    fontFamily: 'Georgia',
+    fontSize: '25@mvs',
+  },
+  bannerSubHead:{
+    fontFamily: 'Georgia',
+    fontSize: '13@mvs',
+    color: '#1F1603'
+  },
 
   bodyBorder:{
     flex: 1,
@@ -103,6 +112,7 @@ const styles = ScaledSheet.create({
     fontFamily: 'Georgia',
     fontWeight: 'bold',
     fontSize: '20@mvs0.5',
+    color: '#1F1603',
     marginBottom: 10
   },
   bodyText: {
