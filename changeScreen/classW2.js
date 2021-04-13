@@ -112,5 +112,17 @@ const styles = ScaledSheet.create({
     marginBottom: 20, 
     lineHeight: '25@mvs0.2',
   },
+
+  quote:{
+    width: '75%',
+    fontFamily: 'Helvetica',
+    lineHeight: '22@mvs',
+    
+    padding: '15@mvs',
+    borderWidth: '1@mvs',
+    borderStyle: 'dashed',
+    marginVertical: '20@mvs',
+    marginLeft: '10@mvs'
+  }
   
 });
