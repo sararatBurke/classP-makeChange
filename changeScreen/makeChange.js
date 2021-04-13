@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Text, 
     View, 
@@ -7,7 +7,6 @@ import { Text,
     ImageBackground,
     Dimensions } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
-
 
 export default function App() {
     const bannerBg = { uri: "https://wallpaperaccess.com/full/336165.jpg" };
@@ -32,9 +31,13 @@ export default function App() {
         setDimensions({window, screen});
     };
 
-
-
-
+    useEffect(() => {
+        Dimensions.addEventListener('change', onChange);
+        return() => {
+            Dimensions.removeEventListener('change', onChange), rotateScreen();
+        };
+    });
+    
 return (
   <View style={styles.container}>
 
