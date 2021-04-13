@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Text, View, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import { Text, 
+    View, 
+    ScrollView, 
+    TouchableOpacity, 
+    ImageBackground,
+    Dimensions } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 
 export default function App() {
     const bannerBg = { uri: "https://wallpaperaccess.com/full/336165.jpg" };
     const bodyBg = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsxs7wYBQbxNozDnmmzcIlM6gsTp5ISBObeA&usqp=CAU"};
-  return (
+
+    const window = Dimensions.get('window');
+    const screen = Dimensions.get('screen');
+    const [dimensions, setDimensions] = useState({ window, screen });
+    const [rotate, setRotate] = useState('portrait');
+
+    const rotateScreen = () => {
+        if (dimensions.screen.width > dimensions.screen.height){
+            setRotate('landscape')
+        }
+        else{
+            setRotate('portrait')
+        }
+        console.log(rotate)
+    };
+
+    const onChange = ({window, screen}) => {
+        setDimensions({window, screen});
+    };
+
+
+
+
+return (
   <View style={styles.container}>
 
       <View style={styles.header}>
