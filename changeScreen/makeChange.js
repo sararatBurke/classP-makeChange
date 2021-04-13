@@ -5,7 +5,8 @@ import { Text,
     ScrollView, 
     TouchableOpacity, 
     ImageBackground,
-    Dimensions } from 'react-native';
+    Dimensions,
+    SafeAreaView } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default function App() {
@@ -39,7 +40,7 @@ export default function App() {
     });
     
 return (
-  <View style={styles.container}>
+  <SafeAreaView style={styles.container}>
 
       <View style={styles.header}>
         <ImageBackground source={bannerBg} style={styles.image}>
@@ -98,7 +99,7 @@ return (
         </ImageBackground>
       </View>
 
-  </View>
+  </SafeAreaView>
 
     
   );
