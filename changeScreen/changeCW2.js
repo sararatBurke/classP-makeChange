@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Text, 
   View, 
   ImageBackground, 
-  ScrollView } from 'react-native';
+  ScrollView,
+  Dimensions } from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -11,6 +12,21 @@ export default function App() {
 
   const banner = { uri: "https://www.html.am/templates/downloads/bryantsmith/hdmonochrome/mainImage.jpg" };
   const bg = { uri: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBxASBgYGBg0PBgYGDRAICRANFBEWFhQRExMYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIANMA7wMBIgACEQEDEQH/xAAZAAEBAQADAAAAAAAAAAAAAAAABAIDBQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAExL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9u2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7NgloUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAjqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKghqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1Kg6+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqCCpVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsCGpVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqCKhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCShRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2Dg0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q=="};
+  
+  const window = Dimensions.get('window');
+  const screen = Dimensions.get('screen');
+  const [ dimensions, setDimensions ] = useState({window, screen});
+  const [ rotate, setRotate ] = useState('portrait');
+
+  const rotateScreen = () => {
+      if(dimensions.screen.width > dimensions.screen.height){
+            setRotate('landscape')
+      }
+      else{
+            setRotate('portrait')
+      }console.log(rotate);
+  };
+
   
   return (
     <View style={styles.container}>
