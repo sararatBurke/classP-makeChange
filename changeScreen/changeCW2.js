@@ -10,9 +10,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
 
-  const banner = { uri: "https://www.html.am/templates/downloads/bryantsmith/hdmonochrome/mainImage.jpg" };
-  const bg = { uri: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBxASBgYGBg0PBgYGDRAICRANFBEWFhQRExMYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIANMA7wMBIgACEQEDEQH/xAAZAAEBAQADAAAAAAAAAAAAAAAABAIDBQf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAExL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9u2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7Ngo2bT7NgloUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAroUSUKAjqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKgtqVRVKghqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1KguqVQ1Kg6+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqC+pVBUqCCpVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsC+pVBYsCGpVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqC6pVDUqCKhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCuhRJQoCShRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2CmhRNs2Dg0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAa0aZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/2Q=="};
-  
+  const banner = { uri: "https://images.squarespace-cdn.com/content/v1/5d8dc9b118fcce5c671238f3/1572539299586-TVL0M2YD9REPHH4SLE7Q/ke17ZwdGBToddI8pDm48kDKlev0FO7FuM6w-53bMLEsUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2duSPIE2hE4FZeqzes8IHm6rnFtaIesIas-_4j4X8nzlabSexTd1-frD7527z4SM9QQ/Artiste-Web-Banner.jpg?format=1000w" };
+  const bg = { uri: "https://i.pinimg.com/736x/ee/51/c8/ee51c8377d033bccf345b9b47218073b.jpg" };
+
   const window = Dimensions.get('window');
   const screen = Dimensions.get('screen');
   const [ dimensions, setDimensions ] = useState({window, screen});
@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <LinearGradient colors={['#fff', '#000']} style={styles.bodyBg}>
+      <LinearGradient colors={['#C7EFF0', '#92CCDD', '#B4DAF7']} style={styles.bodyBg}>
       <View style={rotate === 'portrait'? styles.nav: styles.narLandscape}>
         {/* Nav bar */}
       <ScrollView 
@@ -54,18 +54,17 @@ export default function App() {
       </View>
     
       {rotate === "portrait" ? 
-      <View style={styles.bannerBorder}>
+      <View style={ styles.bannerBorder}>
         {/* Banner image */}
         <ImageBackground source={banner}
           style={styles.bannerBg}>
-        <Text style={styles.bannerHead}>HD Monochrome</Text>
-        <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text>
-        </ImageBackground>
+         </ImageBackground>
       </View>: null}
 
       <View style={styles.bodyBorder }>
         {/* Body */}
-        <ScrollView style={styles.content}>
+        <ImageBackground source={bg} style={styles.bodyImageBg}>
+        <ScrollView style={rotate === 'portrait'? styles.content : styles.bodyLandscape}>
           <Text style={styles.head}>High Definition Monochrome</Text>
               <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
               <Text style={styles.bodyText}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</Text>
@@ -80,10 +79,9 @@ export default function App() {
           <Text style={styles.head}>Yet Another One!</Text>
               <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
               <Text style={styles.bodyText}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</Text>
-              <Text style={styles.bodyText}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>   
-          
-
+              <Text style={styles.bodyText}>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</Text>
         </ScrollView>
+        </ImageBackground>
       </View>
       </LinearGradient>
     </View>
@@ -118,7 +116,7 @@ const styles = ScaledSheet.create({
   navText: {
     fontFamily: 'Georgia',
     fontSize: '20@mvs0.3',
-    marginHorizontal: '20@mvs',
+    marginHorizontal: '10@mvs0.1',
   },
   navTextLandS:{
     fontFamily: 'Georgia',
@@ -132,7 +130,7 @@ const styles = ScaledSheet.create({
   },
   bannerBg: {
     width: '100%',
-    height: '150@s',
+    height: '100@s',
     resizeMode: "cover",
   },
   bannerHead:{
@@ -152,14 +150,22 @@ const styles = ScaledSheet.create({
     flex: 1,
     borderWidth: '4@s',
     marginTop: '15@mvs',
-    alignSelf: 'center'
-    
+    alignSelf: 'center'  
+  },
+  bodyImageBg:{
+    width: '100%',
+    resizeMode: 'stretch'
+  },
+  bodyLandscape: {
+    width: '670@s',
+    padding: '20@s',
+   
   },
   content:{
     width: '320@s',
     flex: 1,
     padding: 15,
-    backgroundColor: '#fff'
+   
   },
   head:{
     fontFamily: 'Georgia',
