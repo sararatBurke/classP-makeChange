@@ -63,7 +63,8 @@ export default function App() {
 
       <View style={styles.bodyBorder }>
         {/* Body */}
-        <ImageBackground source={bg} style={styles.bodyImageBg}>
+        <ImageBackground source={bg} 
+        style={rotate === 'portrait'? styles.bodyImageBg : styles.bodyImageBg2}>
         <ScrollView style={rotate === 'portrait'? styles.content : styles.bodyLandscape}>
           <Text style={styles.head}>High Definition Monochrome</Text>
               <Text style={styles.bodyText}>You may use this template on any site, anywhere, for free just please leave the link back to me in the footer. This template validates XHTML Strict 1.0, CSS Validates as well; enjoy</Text>
@@ -126,6 +127,7 @@ const styles = ScaledSheet.create({
   bannerBorder:{
     borderWidth: '4@s',
     width: '330@s',
+    marginTop: '-35@s',
     alignSelf: 'center'
   },
   bannerBg: {
@@ -153,8 +155,13 @@ const styles = ScaledSheet.create({
     alignSelf: 'center'  
   },
   bodyImageBg:{
-    width: '100%',
+    width: '320@s',
+    height: '100%',
     resizeMode: 'stretch'
+  },
+  bodyImageBg2: {
+    width: '690@s',
+    height: '100%',
   },
   bodyLandscape: {
     width: '670@s',
