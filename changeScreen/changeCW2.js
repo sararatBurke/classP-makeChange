@@ -115,12 +115,14 @@ const styles = ScaledSheet.create({
     alignItems: 'center'
   },
   navText: {
-    fontFamily: 'Georgia',
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
     fontSize: '20@mvs0.3',
     marginHorizontal: '10@mvs0.1',
   },
   navTextLandS:{
-    fontFamily: 'Georgia',
+    fontFamily: 'Arial',
+    fontWeight: 'bold',
     fontSize: '20@mvs0.3',
     marginHorizontal: '35@mvs',
   },
