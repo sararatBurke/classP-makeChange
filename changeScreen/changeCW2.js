@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Text, 
   View, 
@@ -27,7 +27,16 @@ export default function App() {
       }console.log(rotate);
   };
 
-  
+  const onChange = ({window, screen}) => {
+        setDimensions({window, screen});
+  };
+  useEffect( () => {
+        Dimensions.addEventListener('change', onChange);
+    return () => {
+        Dimensions.removeEventListener('change', onChange), rotateScreen();
+    }
+  });
+
   return (
     <View style={styles.container}>
       <LinearGradient colors={['#fff', '#000']} style={styles.bodyBg}>
