@@ -1,7 +1,11 @@
 import React from 'react';
-import { Text, View, 
-  ImageBackground, ScrollView } from 'react-native';
+import { 
+  Text, 
+  View, 
+  ImageBackground, 
+  ScrollView } from 'react-native';
 import {ScaledSheet} from 'react-native-size-matters';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function App() {
 
@@ -10,7 +14,7 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-
+      <LinearGradient colors={['#fff', '#000']} style={styles.bodyBg}>
       <View style={styles.nav}>
         {/* Nav bar */}
       <ScrollView 
@@ -55,6 +59,7 @@ export default function App() {
 
         </ScrollView>
       </View>
+      </LinearGradient>
     </View>
   );
 }
@@ -67,46 +72,61 @@ const styles = ScaledSheet.create({
     // justifyContent: 'center',
     
   },
+  bodyBg:{
+    height: '100%',
+    width: '100%',
+    padding: 10
+  },
   nav: {
     flex: 0.1,
-    marginTop: 50,
+    marginLeft: '20@s',
+    marginTop: '35@mvs',
+    marginBottom: '5@s',
+    paddingHorizontal: '10@mvs'
     
   },
   navText: {
     fontFamily: 'Georgia',
     fontSize: '20@mvs0.3',
-    marginHorizontal: '25@mvs',
+    marginHorizontal: '20@mvs',
+
   },
   bannerBorder:{
     borderWidth: '4@s',
+    width: '330@s',
+    alignSelf: 'center'
   },
   bannerBg: {
-    width: '320@s',
+    width: '100%',
     height: '150@s',
-    resizeMode: "stretch",
-    padding: 20,
+    resizeMode: "cover",
   },
   bannerHead:{
     fontFamily: 'Georgia',
     fontSize: '25@mvs',
+    paddingHorizontal: '10@s',
+    paddingTop: '10@s'
   },
   bannerSubHead:{
     fontFamily: 'Georgia',
     fontSize: '13@mvs',
-    color: '#1F1603'
+    color: '#1F1603',
+    paddingHorizontal: '10@s'
   },
 
   bodyBorder:{
     flex: 1,
     borderWidth: '4@s',
     marginTop: '15@mvs',
-    marginBottom: 10
+    alignSelf: 'center'
     
   },
   content:{
     width: '320@s',
+    flex: 1,
     padding: 15,
-    marginBottom: 10
+    marginBottom: 10,
+    backgroundColor: '#fff'
   },
   head:{
     fontFamily: 'Georgia',
@@ -118,8 +138,7 @@ const styles = ScaledSheet.create({
   bodyText: {
     fontFamily: 'Georgia',
     fontSize: '14@mvs0.5',
-    marginTop: 5, 
-    marginBottom: 20, 
+    marginVertical: 10, 
     lineHeight: '25@mvs0.2',
   },
 
