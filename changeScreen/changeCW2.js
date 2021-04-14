@@ -40,19 +40,20 @@ export default function App() {
   return (
     <View style={styles.container}>
       <LinearGradient colors={['#fff', '#000']} style={styles.bodyBg}>
-      <View style={styles.nav}>
+      <View style={rotate === 'portrait'? styles.nav: styles.narLandscape}>
         {/* Nav bar */}
       <ScrollView 
         horizontal={true}
         showHorizontalScrollIndicator={false}>
-              <Text style={styles.navText}>Home</Text>
-              <Text style={styles.navText}>About</Text>
-              <Text style={styles.navText}>Portfolio</Text>
-              <Text style={styles.navText}>Services</Text>
-              <Text style={styles.navText}>Contact</Text>
+              <Text style={rotate === 'portraid'? styles.navText : styles.navTextLandS}>Home</Text>
+              <Text style={rotate === 'portraid'? styles.navText : styles.navTextLandS}>About</Text>
+              <Text style={rotate === 'portraid'? styles.navText : styles.navTextLandS}>Portfolio</Text>
+              <Text style={rotate === 'portraid'? styles.navText : styles.navTextLandS}>Services</Text>
+              <Text style={rotate === 'portraid'? styles.navText : styles.navTextLandS}>Contact</Text>
       </ScrollView>
       </View>
-
+    
+      {rotate === "portrait" ? 
       <View style={styles.bannerBorder}>
         {/* Banner image */}
         <ImageBackground source={banner}
@@ -60,9 +61,9 @@ export default function App() {
         <Text style={styles.bannerHead}>HD Monochrome</Text>
         <Text style={styles.bannerSubHead}>An XHTML 1.0 Strict Template by Bryant Smith</Text>
         </ImageBackground>
-      </View>
+      </View>: null}
 
-      <View style={styles.bodyBorder}>
+      <View style={styles.bodyBorder }>
         {/* Body */}
         <ScrollView style={styles.content}>
           <Text style={styles.head}>High Definition Monochrome</Text>
@@ -110,11 +111,19 @@ const styles = ScaledSheet.create({
     paddingHorizontal: '10@mvs'
     
   },
+  narLandscape: {
+    width: '100%',
+    alignItems: 'center'
+  },
   navText: {
     fontFamily: 'Georgia',
     fontSize: '20@mvs0.3',
     marginHorizontal: '20@mvs',
-
+  },
+  navTextLandS:{
+    fontFamily: 'Georgia',
+    fontSize: '20@mvs0.3',
+    marginHorizontal: '35@mvs',
   },
   bannerBorder:{
     borderWidth: '4@s',
@@ -150,7 +159,6 @@ const styles = ScaledSheet.create({
     width: '320@s',
     flex: 1,
     padding: 15,
-    marginBottom: 10,
     backgroundColor: '#fff'
   },
   head:{
